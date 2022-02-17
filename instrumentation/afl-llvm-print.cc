@@ -50,6 +50,8 @@ class AFLPrint : public ModulePass {
 bool AFLPrint::runOnModule(Module &M) {
     LLVMContext &C = M.getContext();
     llvm::dbgs() << "AFLPrint: " << M.getName() << "\n";
+    asm("int3");
+    return false;
 }
 
 
