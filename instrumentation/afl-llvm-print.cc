@@ -46,11 +46,10 @@ class AFLPrint : public ModulePass {
 };
 
 } // namespace
-
+char AFLPrint::ID = 0;
 bool AFLPrint::runOnModule(Module &M) {
     LLVMContext &C = M.getContext();
     llvm::dbgs() << "AFLPrint: " << M.getName() << "\n";
-    asm("int3");
     return false;
 }
 
